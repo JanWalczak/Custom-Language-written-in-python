@@ -1,0 +1,92 @@
+print("1Obsluga dwoch typow zmiennych: calkowite i rzeczywiste:");
+int zz = 42;
+float f = 12345678.0;
+double d = 1234567890123456.0;
+print(zz);    
+print(f);    
+print(d);   
+
+print("2 Podstawowa obsluga standardowego wejscia-wyjscia (read, print)");
+int x;
+print("Podaj liczbe:");
+read(x);      
+print(x);    
+
+string test_string;
+print("Podaj tekst:");
+read(test_string);
+print(test_string);
+
+print("3 Obsluga podstawowych operacji arytmetycznych");
+int a = 10 + 5;
+int b = a - 3;
+int c = b * 2;
+int e = c / 4;
+print(a);    // 15
+print(b);    // 12
+print(c);    // 24
+print(e);    // 6
+
+print("Mieszanie typow");
+print(4.12*3);
+
+print("4 Wskazywanie bledow podczas analizy leksykalno-skladniowej");
+//int test = 5
+//string test2 = 'test';
+
+print("Dod1 Obsluga zmiennych tablicowych (3 pkt)");
+int[3] arr = { 1, 2, 3 };
+print(arr[0]); 
+print(arr[1]); 
+print(arr[2]); 
+
+print("Dod2 Obsluga macierzy liczb (+2 pkt)");
+int[4][4] macierz = 
+{
+    {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}
+};
+
+int[2][3] macierz2 = {{20,21,22},{24,25,26}};
+
+macierz[0:2][0:3] = macierz2;
+
+
+for (int i = 0; i < 4; i = i + 1) {
+    for (int j = 0; j < 4; j = j + 1) { 
+        print(macierz[i][j]);
+    }
+}
+
+print("Dod3 Obsluga wartosci logicznych (2 pkt za AND, OR, XOR, NEG; 5 pkt za short-circuit boolean evaluation)");
+bool b1 = True AND False;
+bool b2 = True OR False;
+bool b3 = True XOR True;
+bool b4 = NEG False;
+bool b5 = True XOR False;
+print(b1);    // False
+print(b2);    // True
+print(b3);    // False
+print(b4);    // True
+print(b5);    // True
+
+
+func fun(string x){
+    print(x);
+}
+
+print("Short-circuit");
+
+print(True AND fun("Funkcja1 powinna sie wywolac"));
+print(False AND fun("Funkcja2 nie powinna sie wywolac"));
+print(False OR fun("Funkcja3 powinna sie wywolac"));
+print(True OR fun("Funkcja4 nie powinna sie wywolac"));
+
+print("Dod4 Obsluga liczb o roznej precyzji (np. Float32, Float64) (5 pkt)");
+float f32 = 5.67899;
+double d64 = 5.67891234512341;
+print(f32);   // przybliżone do precyzji float
+print(d64);   // pełna precyzja double
+
+print("Dod5 Obsluga typu ciag znakow (string) (3 pkt)");
+string hello = "Hello, World!";
+print(hello);   

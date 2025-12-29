@@ -1,0 +1,11 @@
+for (int i = 0; i < 10; i = i + 1) {
+    if(i<5){
+        print("mniej");
+    }else{
+    if (i>=5 AND i<8){
+        print("TAK");
+    }else{
+        print(i);
+    }
+    }
+}

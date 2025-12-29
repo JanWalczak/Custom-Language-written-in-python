@@ -1,0 +1,91 @@
+// ──────────────────────────────
+// BLOK TESTÓW  -  MyLang errors
+// Każdy fragment ma dokładnie jeden błąd,
+// zachowuje kolejność 1 → 15 z opisem.
+// ──────────────────────────────
+
+
+
+// 1. String bez zamykającego cudzysłowu  (błąd leksykalny)
+print("Ala ma kota);
+
+
+
+// 2. Niedozwolony znak „@” (błąd leksykalny)
+@licznik = 3;
+
+
+
+// 3. Niepoprawny literał BOOL  (błąd leksykalny)
+var bool flag = TRUE;
+
+
+
+// 4. Float bez części ułamkowej  (błąd leksykalny)
+var float f = 2.;
+
+
+
+// 5. Brak średnika po deklaracji  (błąd składni)
+var int x = 5
+
+
+
+// 6. Niedomknięta klamra  (błąd składni)
+if (true) {
+    var int y = 0;
+ 
+
+
+
+// 7. Funkcja bez typu parametru  (błąd składni)
+func foo(x) {
+    return;
+}
+
+
+
+// 8. for-nagłówek bez średników  (błąd składni)
+for (i = 0  i < 10  i = i + 1) { }
+
+
+
+// 9. Nieznany operator logiczny  (błąd składni)
+var bool z = true ORR false;
+
+
+
+// 10. return bez średnika  (błąd składni)
+func f() {
+    return
+}
+
+
+
+// 11. Samotne „else”  (błąd składni)
+else {
+    print("???");
+}
+
+
+
+// 12. Brak prawego nawiasu „]”  (błąd składni)
+var int[3] arr;
+arr[0 = 1;
+
+
+
+// 13. Rozmiar tablicy nie-INT  (błąd składni)
+var int[2.5] badArr;
+
+
+
+// 14. Zły separator w wymiarach  (błąd składni)
+var int[2,3] a;
+
+
+
+// 15. Generator bez yield  (błąd składni)
+generator make() {
+    var int i = 0;
+}

@@ -1,0 +1,51 @@
+// Case 1: int * int
+int a1 = 10;
+int b1 = 20;
+print(a1 * b1);
+
+// Case 2: int * float
+int a2 = 5;
+float b2 = 3.5;
+print(a2 * b2);
+
+// Case 3: int * double
+int a3 = 7;
+double b3 = 2.8;
+print(a3 * b3);
+
+// Case 4: float * int
+float a4 = 4.5;
+int b4 = 6;
+print(a4 * b4);
+
+// Case 5: float * float
+float a5 = 1.5;
+float b5 = 2.5;
+print(a5 * b5);
+
+// Case 6: float * double
+float a6 = 2.3;
+double b6 = 6.6;
+print(a6 * b6);
+
+// Case 7: double * int
+double a7 = 9.9;
+int b7 = 3;
+print(a7 * b7);
+
+// Case 8: double * float
+double a8 = 7.7;
+float b8 = 1.1;
+print(a8 * b8);
+
+// Case 9: double * double
+double a9 = 2.2;
+double b9 = 5.5;
+print(a9 * b9);
+
+// Case 9: double * double
+int a10 = 9;
+int b10 = 2;
+print(a10 / b10);
+
+

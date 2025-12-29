@@ -1,0 +1,11 @@
+bool x;
+bool y;
+bool z;
+x = true;
+y = false;
+z = true;
+
+int a1 = 10;
+int a2 = 10;
+
+print(x OR y OR z);

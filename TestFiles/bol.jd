@@ -1,0 +1,8 @@
+bool x = false;
+bool y = false;
+bool z = true;
+print(x OR y AND y OR z);
+
+print(x XOR y);
+
+print(NEG z)

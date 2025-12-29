@@ -1,0 +1,111 @@
+
+
+// Test typów liczbowych
+int liczba_calkowita = 42;
+float64 liczba_rzeczywista = 3.1415;
+var dynamiczna = 10;
+
+// Operacje arytmetyczne
+var wynik = (liczba_calkowita * 2 + liczba_rzeczywista / 2) - 5;
+print(wynik);
+
+// Tablice i macierze
+var tablica = {1, 2, {3, 4}, 5};
+int[2][2] macierz = {{1, 2}, {3, 4}};
+print(macierz[1][0]);
+
+// Operacje logiczne
+bool prawda = true;
+bool falsz = NEG prawda;
+bool logika = (prawda XOR falsz) AND (5 > 2);
+print(logika);
+
+// Short-circuit evaluation
+func zawsze_falsz() {
+    print("Wywołano funkcję!");
+    return false;
+}
+
+if (prawda OR zawsze_falsz()) {
+    print("Short-circuit działa!");
+}
+
+// Ciągi znaków
+string imie;
+read(imie);
+print("Witaj " + imie + "!");
+
+// Instrukcje sterujące
+var i = 0;
+while (i < 5) {
+    print(i);
+    i = i + 1;
+}
+
+for (var j = 0; j < 3; j = j + 1) {
+    print(j * 10);
+}
+
+// Pętla foreach
+for (element in tablica) {
+    if (element == 2) {
+        continue;
+    }
+    print(element);
+}
+
+// Funkcje i zakres zmiennych
+int globalna = 100;
+
+func suma(int a, int b) {
+    var lokalna = a + b;
+    return lokalna + globalna;
+}
+
+print(suma(2, 3));
+
+// Generator
+generator liczby_parzyste(int n) {
+    var i = 0;
+    while (i < n) {
+        if ((i / 2) * 2 == i) {  // Zastąpione % operacjami podstawowymi
+            yield i;
+        }
+        i = i + 1;
+    }
+}
+
+for (liczba in liczby_parzyste(10)) {
+    print(liczba);
+}
+
+// Struktury
+struct Punkt {
+    int x;
+    int y;
+}
+
+Punkt p1 = new Punkt(10, 20);
+print(p1.x);
+
+// Klasy i dziedziczenie
+class Zwierze(string nazwa) {
+    string imie = nazwa;
+
+    func daj_glos() {
+        print("???");
+    }
+}
+
+class Pies() extends Zwierze {
+    constructor(string nazwa) {
+        super(nazwa);
+    }
+
+    func daj_glos() {
+        print("Hau hau!");
+    }
+}
+
+Pies reksio = new Pies("Reksio");
+reksio.daj_glos();

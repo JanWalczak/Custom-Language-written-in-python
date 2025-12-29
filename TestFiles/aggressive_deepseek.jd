@@ -1,0 +1,108 @@
+// 1. Statyczne zmienne i funkcje
+static var global_counter = 0;
+static func utilities() {
+    static var internal_state = 42;
+    global_counter = global_counter + 1;
+}
+
+// 2. Złożone inicjalizacje tablic
+int[3][3] matrix = {
+    {1, 2, {4, 5}},  // Zagnieżdżona tablica
+    {6, 7, 8},
+    {9, 10, 11}
+};
+
+var jagged = {
+    "level1", 
+    { 
+        true, 
+        { 
+            NEG false, 
+            { 
+                3.14 
+            } 
+        } 
+    }
+};
+
+// 3. Dziedziczenie i konstruktory
+class Base(int size) {
+    int capacity = size * 2;
+    
+    constructor(int size) {
+        this.capacity = size;
+    }
+    
+    func validate() {
+        return capacity > 0;
+    }
+}
+
+class Derived() extends Base {
+    string label;
+    
+    constructor(int s, string l) {
+        super(s + 5);
+        this.label = l;
+    }
+    
+    static func factory() {
+        return new Derived(10, "test");
+    }
+}
+
+// 4. Poprawione przypisania
+func swap(ref a, ref b) {
+    var tmp = a;
+    a = b;
+    b = tmp;
+}
+
+var x = 10;
+var y = 20;
+swap(x, y);
+
+// 5. Generatory i pętle
+generator primes(int limit) {
+    var sieve = {false};
+    for (var i = 2; i < limit; i = i + 1) {
+        if (NEG sieve[i]) {
+            yield i;
+            for (var j = i * i; j < limit; j = j + i) {
+                sieve[j] = true;
+            }
+        }
+    }
+}
+
+for (prime in primes(100)) {
+    print(prime);
+}
+
+// 6. Poprawione wyrażenia
+var a = 10;
+var b = 20;
+var logic = (a * 2 < b + 5) XOR (NEG true AND (a == 10 OR (b / 3) * 3 == 2));
+var nested_neg = NEG NEG NEG true;
+
+// 7. Poprawiony dostęp
+var obj = new Derived(5, "test");
+obj.validate();
+var value = matrix[1][2];
+
+// 8. Edge cases
+struct EmptyStruct {}
+class EmptyClass() {}
+
+var empty_array = {};
+var null_init = {};
+
+func void_func() {
+    // Brak return
+}
+
+func recursive(int n) {
+    if (n > 0) {
+        recursive(n - 1);
+    }
+}

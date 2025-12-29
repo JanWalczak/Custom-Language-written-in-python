@@ -1,0 +1,5 @@
+float x = 3.12414;
+double y = 3.343432332323;
+
+print(x);
+print(y);

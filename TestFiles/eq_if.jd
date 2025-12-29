@@ -1,0 +1,21 @@
+bool a;
+
+
+if (5==5 AND 2!=2){
+    a = True;
+} else{
+    a = False;
+}
+
+print(a);
+
+
+string c = "hello12";
+string d;
+
+read(d);
+if (c == d) {
+    print("Equal");
+} else {
+    print("nope");
+}

@@ -1,0 +1,14 @@
+// Case 1: int * int
+int a1 = 10;
+int b1 = 20;
+int c1 = 2;
+print(c1 + a1 * b1);
+
+// Case 2: int * float
+int a2 = 5;
+float b2 = 3.5;
+print(a2 * b2);
+
+
+
+

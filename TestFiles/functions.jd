@@ -1,0 +1,4 @@
+func main() {
+    int a = 10;  // Local variable
+    print(a);    // Should work
+}

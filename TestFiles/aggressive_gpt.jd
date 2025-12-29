@@ -1,0 +1,122 @@
+    // Test 1: Obsługa typów zmiennych: całkowite i rzeczywiste oraz typy podstawowe
+    static int a = 5;
+    var b = 10;
+    float32 c = 3.14;
+    float64 d = 2.71828;
+    bool flag = true;
+    string str = "Test string";
+
+    // Test 2: Standardowe wejście-wyjście (read i print)
+    print("Podaj wartosc dla zmiennej e:");
+    var e = 0;
+    read(e);
+    print("Wczytano: " + e);
+
+    // Test 3: Operacje arytmetyczne
+    print("Suma (a + b): " + (a + b));
+    print("Roznica (d - c): " + (d - c));
+    print("Iloczyn (a * b): " + (a * b));
+    print("Iloraz (b / a): " + (b / a));
+
+    // Test 4: Wskazywanie błędu leksykalno-składniowego
+    // UWAGA: Poniższa linia zawiera błąd (brak średnika) i powinna zostać wychwycona przez analizator składniowy.
+    // static int errorVar = 100
+
+    // Test 5: Obsługa zmiennych tablicowych
+    var arr = {1, 2, 3, 4, 5};
+    print("Tablica: " + arr);
+
+    // Test 6: Obsługa macierzy liczb
+    float64[2][2] matrix = { {1.1, 2.2}, {3.3, 4.4} };
+    print("Macierz: " + matrix);
+
+    // Test 7: Operacje logiczne (AND, OR, XOR, NEG)
+    bool resAnd = flag AND false;
+    bool resOr = flag OR false;
+    bool resXor = flag XOR false;
+    print("Wynik AND: " + resAnd);
+    print("Wynik OR: " + resOr);
+    print("Wynik XOR: " + resXor);
+    print("Negacja flag (NEG): " + (NEG flag));
+
+    // Test 8: Instrukcja warunkowa
+    if (a > b) {
+        print("a jest wieksze od b");
+    } else {
+        print("a nie jest wieksze od b");
+    }
+
+    // Test 9: Pętle
+    // Pętla while
+    var i = 0;
+    while (i < 3) {
+        print("while, i = " + i);
+        i = i + 1;
+    }
+    // Pętla for (z użyciem varDecl w inicjalizatorze i simpleAssignment w aktualizacji)
+    for (var j = 0; j < 3; j = j + 1) {
+        print("for, j = " + j);
+    }
+    // Pętla foreach na fragmencie tablicy (użycie index range)
+    for (elem in arr[1:4]) {
+        print("foreach, element: " + elem);
+    }
+
+    // Test 10: Tworzenie funkcji
+    func add(int x, int y) {
+        return x + y;
+    }
+    print("add(3,4): " + add(3, 4));
+
+    // Test 11: Obsługa zasięgu zmiennych (lokalne i globalne, shadowing)
+    func scopeTest() {
+        var localVar = "lokalny";
+        print("Wewnetrzny localVar: " + localVar);
+        {
+            var localVar = "shadow";
+            print("Shadow localVar: " + localVar);
+        }
+        print("Ponownie lokalny localVar: " + localVar);
+    }
+    scopeTest();
+
+    // Test 12: Obsługa struktur
+    struct Point {
+        int x;
+        int y;
+    }
+    // Inicjalizacja struktury przy użyciu inicjalizatora zagnieżdżonego (edge case: brak dedykowanego konstruktora)
+    var p = {10, 20};
+    print("Struktura Point: (" + p[0] + ", " + p[1] + ")");
+
+    // Test 13: Obsługa klas
+    class Person (string name, int age) {
+        var name = name;
+        var age = age;
+        constructor(string name, int age) {
+            self.name = name;
+            self.age = age;
+        }
+        func greet() {
+            print("Czesc, jestem " + self.name + " i mam " + self.age + " lat.");
+        }
+    }
+    var person1 = new Person("Anna", 25);
+    person1.greet();
+
+    // Test 14: Dynamiczne typowanie
+    var dyn = 123;
+    print("dyn jako int: " + dyn);
+    dyn = "teraz string";
+    print("dyn jako string: " + dyn);
+
+    // Test 15: Funkcje-generator (iterator)
+    generator range(int start, int end) {
+        for (var k = start; k < end; k = k + 1) {
+            yield k;
+        }
+    }
+    for (num in range(0, 3)) {
+        print("Generator, num: " + num);
+    }
+

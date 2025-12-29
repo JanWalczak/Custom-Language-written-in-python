@@ -1,0 +1,126 @@
+// Import – przykładowa biblioteka standardowa
+import "std.lib";
+
+// Globalne zmienne o różnych typach
+var a = 5;                   // dynamiczna liczba całkowita
+int b = 10;                  // statyczna liczba całkowita
+float32 c = 3.14;            // liczba rzeczywista o precyzji 32-bitowej
+float64 d = 2.71828;         // liczba rzeczywista o precyzji 64-bitowej
+bool flag = true;            // wartość logiczna
+string napis = "Witaj, świecie!";
+
+// Tablica jednowymiarowa i macierz (tablica wielowymiarowa)
+int[5] tablica = {1, 2, 3, 4, 5};
+float64[3][3] macierz = { {1.0, 2.0, 3.0},
+                          {4.0, 5.0, 6.0},
+                          {7.0, 8.0, 9.0} };
+
+
+print(macierz[1:]);
+print(macierz[1][2]);
+print(macierz[1:]);
+
+
+// Podstawowe wejście-wyjście
+print("Podaj liczbę:");
+var x = 0;
+read(x);
+print("Wczytana liczba: " + x);
+
+// Operacje arytmetyczne
+print("Suma a + b: " + (a + b));
+print("Różnica d - c: " + (d - c));
+print("Iloczyn a * b: " + (a * b));
+print("Iloraz b / a: " + (b / a));
+
+// Operacje logiczne (AND, OR, XOR, NEG)
+bool wynikAnd = flag AND false;
+bool wynikOr  = flag OR false;
+bool wynikXor = flag XOR false;
+print("Wynik AND: " + wynikAnd);
+print("Wynik OR: " + wynikOr);
+print("Wynik XOR: " + wynikXor);
+print("Negacja flag: " + (NEG flag));
+
+// Instrukcja warunkowa
+if (a < b) {
+    print("a jest mniejsze od b");
+} else {
+    print("a nie jest mniejsze od b");
+}
+
+// Pętla while
+int i = 0;
+while (i < 5) {
+    print("Pętla while, i = " + i);
+    i = i + 1;
+}
+
+// Pętla for (klasyczna)
+for (i = 0; i < 5; i = i + 1) {
+    print("Pętla for, i = " + i);
+}
+
+// Pętla foreach
+for (elem in tablica) {
+    print("Element tablicy: " + elem);
+}
+
+// Definicje funkcji
+
+// Funkcja sumująca dwie liczby całkowite
+func suma(int x, int y) {
+    return x + y;
+}
+
+// Funkcja testująca zasięg zmiennych lokalnych
+func testZakres() {
+    int lokalna = 100;
+    print("Lokalna zmienna: " + lokalna);
+}
+print("Suma 7 + 8: " + suma(7, 8));
+testZakres();
+
+// Definicja struktury – reprezentacja punktu
+struct Punkt {
+    int x;
+    int y;
+}
+
+// Definicja klasy z dziedziczeniem (przykładowe rozszerzenie klasy Czlowiek)
+class Osoba (string imie, int wiek) extends Czlowiek {
+    var name = imie;
+    var age = wiek;
+    constructor(string imie, int wiek) {
+        self.name = imie;
+        self.age = wiek;
+    }
+    func przedstawSie() {
+        print("Cześć, jestem " + self.name + " i mam " + self.age + " lat.");
+    }
+}
+
+// Tworzenie obiektu klasy Osoba i wywołanie metody
+var osoba = new Osoba("Jan", 30);
+osoba.przedstawSie();
+
+// Dynamiczne typowanie – zmiana typu zmiennej zadeklarowanej dynamicznie
+var dynamiczna = 42;
+print("Dynamiczna przed: " + dynamiczna);
+dynamiczna = "zmieniony typ";
+print("Dynamiczna po: " + dynamiczna);
+
+// Funkcja-generator (iterator) generujący liczby w zadanym przedziale
+generator range(int start, int end) {
+    for (int i = start; i < end; i = i + 1) {
+        yield i;
+    }
+}
+
+// Użycie generatora w pętli foreach
+for (num in range(0, 5)) {
+    print("Generator num: " + num);
+}
+
+// Przykład błędu leksykalno-składniowego (zakomentowany – gdyby odkomentować, zgłosi błąd)
+// var blad = 123    // brak średnika
