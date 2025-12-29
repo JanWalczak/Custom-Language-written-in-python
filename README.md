@@ -2,14 +2,10 @@
 
 Collaborators for this repository include:
 * Patryk Jankowicz ([GitHub](https://github.com/PatrykSJ)), Warsaw University of Technology
-* Miłosz Kutyła ([GitHub](https://github.com/mkutyla)), Warsaw University of Technology
+* Jakub Ossowski ([GitHub](https://github.com/bilevcik)), Warsaw University of Technology
 * Jan Walczak ([GitHub](https://github.com/JanWalczak)), Warsaw University of Technology
 
-
 # MyLang → LLVM IR (ANTLR4 + Python)
-
-
-
 
 This repository is a prototype compiler for a custom language (“MyLang”).  
 It uses **ANTLR4 (Python target, Visitor pattern)** for parsing and a custom **LLVM IR code generator** to produce `program.ll`, then compiles it with **clang** into a native executable.
